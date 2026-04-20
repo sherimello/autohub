@@ -119,7 +119,7 @@ export class Storage {
         acc[a.serviceType] = (acc[a.serviceType] || 0) + 1;
         return acc;
       }, {})
-    ).map(([serviceType, count]) => ({ serviceType, _count: count }))
+    ).map(([serviceType, count]) => ({ serviceType, _count: count as number }))
      .sort((a, b) => b._count - a._count)
      .slice(0, 8);
 

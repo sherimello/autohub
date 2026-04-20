@@ -1,12 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-// Mock implementation of API routes so they return success/data without DB
-// even if components still call them.
-
+// This app runs in mock/localStorage mode. These API routes are not used.
 export async function GET() {
-  return NextResponse.json({ message: "Mock API. Use Storage utility on client instead." });
+  return NextResponse.json({ error: "Mock mode – use client-side Storage" }, { status: 501 });
 }
 
-export async function POST(req: NextRequest) {
-  return NextResponse.json({ message: "Mock API. Data saved to browser cache instead." }, { status: 201 });
+export async function POST() {
+  return NextResponse.json({ error: "Mock mode – use client-side Storage" }, { status: 501 });
 }
