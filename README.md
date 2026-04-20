@@ -55,4 +55,3 @@ To run as a separate project:
 - **3D:** React Three Fiber + Three.js
 - **Particles:** tsparticles
 "# car-workshop-management-software" 
-"# autohub" 
