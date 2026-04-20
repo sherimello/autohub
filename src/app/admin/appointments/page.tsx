@@ -64,7 +64,7 @@ export default function AdminAppointmentsPage() {
     // Update in localStorage
     const allAppts = Storage.getAppointments();
     const updated = allAppts.map((a: any) => a.id === id ? { ...a, status } : a);
-    Storage.set("autohub_appointments", updated);
+    Storage.setAppointments(updated);
 
     setAppointments((prev) => prev.map((a) => (a.id === id ? { ...a, status } : a)));
     setUpdating(null);

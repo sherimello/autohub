@@ -67,6 +67,7 @@ export class Storage {
 
   // Appointments
   static getAppointments() { return this.get<any>(STORAGE_KEYS.APPOINTMENTS); }
+  static setAppointments(appts: any[]) { this.set(STORAGE_KEYS.APPOINTMENTS, appts); }
   static getAppointmentsByClient(clientId: string) {
     return this.getAppointments().filter((a: any) => a.clientId === clientId);
   }
