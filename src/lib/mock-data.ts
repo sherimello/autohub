@@ -1,0 +1,137 @@
+export const MOCK_USERS = [
+  {
+    id: "admin-1",
+    email: "admin@autohub.com",
+    name: "System Admin",
+    password: "admin123", // In a real app we'd hash, but for mock login we'll check plain or simple hash
+    role: "ADMIN",
+    phone: "+1-555-0100",
+  },
+  {
+    id: "client-1",
+    email: "john@example.com",
+    name: "John Mitchell",
+    password: "client123",
+    role: "CLIENT",
+    phone: "+1-555-0101",
+    address: "123 Main St, New York, NY 10001",
+  },
+  {
+    id: "client-2",
+    email: "sarah@example.com",
+    name: "Sarah Williams",
+    password: "client123",
+    role: "CLIENT",
+    phone: "+1-555-0102",
+    address: "456 Park Ave, New York, NY 10022",
+  },
+];
+
+export const MOCK_SERVICES = [
+  { id: "s1", name: "Oil Change", serviceType: "OIL_CHANGE", basePrice: 49.99, duration: 30, description: "Full synthetic oil change with filter" },
+  { id: "s2", name: "Tire Rotation", serviceType: "TIRE_ROTATION", basePrice: 29.99, duration: 45, description: "Complete tire rotation and pressure check" },
+  { id: "s3", name: "Brake Service", serviceType: "BRAKE_SERVICE", basePrice: 199.99, duration: 120, description: "Brake pad replacement and rotor inspection" },
+  { id: "s4", name: "Engine Diagnostic", serviceType: "ENGINE_DIAGNOSTIC", basePrice: 89.99, duration: 60, description: "Full engine diagnostic scan" },
+  { id: "s5", name: "AC Service", serviceType: "AC_SERVICE", basePrice: 149.99, duration: 90, description: "AC recharge and system check" },
+  { id: "s6", name: "Full Detailing", serviceType: "DETAILING", basePrice: 299.99, duration: 240, description: "Interior and exterior detailing" },
+];
+
+export const MOCK_VEHICLES = [
+  {
+    id: "v1",
+    ownerId: "client-1",
+    make: "BMW",
+    model: "M3",
+    year: 2022,
+    vin: "WBS4Y9C03NCJ12345",
+    licensePlate: "NYC-M3-22",
+    color: "Alpine White",
+    mileage: 18500,
+    status: "ACTIVE",
+  },
+  {
+    id: "v2",
+    ownerId: "client-1",
+    make: "Porsche",
+    model: "911 GT3",
+    year: 2023,
+    vin: "WP0AC2A99PS244567",
+    licensePlate: "NYC-GT3-23",
+    color: "Guards Red",
+    mileage: 5200,
+    status: "ACTIVE",
+  },
+  {
+    id: "v3",
+    ownerId: "client-2",
+    make: "Mercedes-Benz",
+    model: "AMG GT",
+    year: 2021,
+    vin: "WDDYJ7JA5JA012345",
+    licensePlate: "NYC-AMG-21",
+    color: "Obsidian Black",
+    mileage: 24100,
+    status: "IN_SERVICE",
+  },
+];
+
+export const MOCK_APPOINTMENTS = [
+  {
+    id: "a1",
+    clientId: "client-1",
+    vehicleId: "v1",
+    serviceType: "OIL_CHANGE",
+    status: "COMPLETED",
+    scheduledAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(),
+    duration: 30,
+    totalAmount: 49.99,
+  },
+  {
+    id: "a2",
+    clientId: "client-2",
+    vehicleId: "v3",
+    serviceType: "BRAKE_SERVICE",
+    status: "IN_PROGRESS",
+    scheduledAt: new Date().toISOString(),
+    duration: 120,
+    totalAmount: 199.99,
+  },
+  {
+    id: "a3",
+    clientId: "client-1",
+    vehicleId: "v2",
+    serviceType: "ENGINE_DIAGNOSTIC",
+    status: "CONFIRMED",
+    scheduledAt: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString(),
+    duration: 60,
+  },
+];
+
+export const MOCK_INVOICES = [
+  {
+    id: "i1",
+    clientId: "client-1",
+    vehicleId: "v1",
+    appointmentId: "a1",
+    invoiceNumber: "INV-2024-001",
+    status: "PAID",
+    issueDate: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(),
+    dueDate: new Date(Date.now() - 0 * 24 * 60 * 60 * 1000).toISOString(),
+    subtotal: 49.99,
+    tax: 4.5,
+    total: 54.49,
+  },
+  {
+    id: "i2",
+    clientId: "client-2",
+    vehicleId: "v3",
+    appointmentId: "a2",
+    invoiceNumber: "INV-2024-002",
+    status: "SENT",
+    issueDate: new Date().toISOString(),
+    dueDate: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString(),
+    subtotal: 199.99,
+    tax: 18.0,
+    total: 217.99,
+  },
+];
