@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { Sparkles } from "@/components/ui/sparkles";
-import { BlurredStagger } from "@/components/ui/blurred-stagger-text";
 import { Testimonials } from "@/components/ui/unique-testimonial";
 import { Marquee } from "@/components/ui/marquee";
 import { Navbar } from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
+import { Hero } from "@/components/ui/hero-1";
 import {
   Car, Wrench, FileText, Calendar, Shield, Gauge, ChevronRight,
-  Zap, Star, Users, TrendingUp, Clock, Award, CheckCircle2,
+  Zap, Star, Users, Clock, Award, CheckCircle2,
 } from "lucide-react";
 
 // Brand logos (automotive industry relevant)
@@ -78,13 +78,6 @@ const features = [
   },
 ];
 
-const stats = [
-  { value: "12,000+", label: "Vehicles Managed", icon: Car },
-  { value: "98.7%", label: "Client Satisfaction", icon: Star },
-  { value: "340+", label: "Service Centers", icon: Wrench },
-  { value: "$2.4M", label: "Revenue Processed", icon: TrendingUp },
-];
-
 const services = [
   { name: "Oil & Fluid Service", time: "30 min", price: "From $49" },
   { name: "Brake System Service", time: "2 hrs", price: "From $199" },
@@ -102,88 +95,15 @@ export default function HomePage() {
       <Navbar />
 
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-        {/* Content */}
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto pt-24">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 glass-gold rounded-full px-4 py-2 mb-8 border border-gold-500/20">
-            <Zap className="w-3.5 h-3.5 text-gold-400" />
-            <span className="text-xs font-semibold text-gold-300 tracking-widest uppercase">
-              Premium Automotive Management
-            </span>
-          </div>
-
-          {/* Headline */}
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-6 leading-[0.95]">
-            <span className="block text-white">
-              <BlurredStagger text="Engineer Your" className="text-white" />
-            </span>
-            <span className="block mt-2">
-              <BlurredStagger text="Fleet's Future" className="shimmer-gold" />
-            </span>
-          </h1>
-
-          <p className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto mb-10 leading-relaxed">
-            The most sophisticated automotive management platform. Built for precision workshops,
-            premium dealerships, and discerning fleet owners who demand nothing but excellence.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Button size="xl" asChild>
-              <Link href="/auth/register">
-                Start Free Trial
-                <ChevronRight className="w-5 h-5" />
-              </Link>
-            </Button>
-            <Button size="xl" variant="outline" asChild>
-              <Link href="/auth/login">
-                Access Portal
-              </Link>
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-            {stats.map((stat) => (
-              <div key={stat.label} className="glass rounded-2xl p-4 group hover:glass-gold transition-all duration-300">
-                <stat.icon className="w-5 h-5 text-gold-500/60 mx-auto mb-2 group-hover:text-gold-400 transition-colors" />
-                <div className="text-2xl font-bold text-white mb-0.5">{stat.value}</div>
-                <div className="text-xs text-white/40 uppercase tracking-wide">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Sparkles Hero section */}
-        <div className="relative w-full -mt-20">
-          <div className="mx-auto mt-32 w-full max-w-3xl">
-            {/* Trusted by */}
-            <div className="text-center text-2xl md:text-3xl font-light px-6">
-              <span className="text-white/40">Trusted by elite workshops.</span>
-              <br />
-              <span className="text-white/70">Used by industry leaders.</span>
-            </div>
-
-            <div className="mt-12 grid grid-cols-5 gap-6 px-8 text-white/30">
-              {["Porsche\nCertified", "BMW\nGroup", "Mercedes\nAMG", "Ferrari\nSPA", "Bentley\nMotors"].map((name, i) => (
-                <div key={i} className="text-center text-xs font-semibold uppercase tracking-wider whitespace-pre-line hover:text-white/60 transition-colors cursor-default">
-                  {name}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Sparkle burst */}
-          <div className="relative -mt-16 h-64 w-full overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white_20%,white_80%,transparent)]">
-            <Sparkles
-              density={800}
-              className="absolute inset-0 h-full w-full"
-              color="#D4AF37"
-              size={1}
-            />
-          </div>
-        </div>
-      </section>
+      <Hero
+        eyebrow="Premium Automotive Management"
+        title="Engineer Your Fleet's Future"
+        subtitle="The most sophisticated automotive management platform. Built for precision workshops, premium dealerships, and discerning fleet owners who demand nothing but excellence."
+        ctaLabel="Start Free Trial"
+        ctaHref="/auth/register"
+        secondaryLabel="Access Portal"
+        secondaryHref="/auth/login"
+      />
 
       {/* ── BRAND MARQUEE ── */}
       <section className="py-12 border-y border-white/5">

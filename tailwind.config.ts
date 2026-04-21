@@ -106,6 +106,14 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translate(-72%, -62%) scale(0.5)" },
           "100%": { opacity: "1", transform: "translate(-50%,-40%) scale(1)" },
         },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-up": {
+          "0%": { opacity: "0", transform: "translateY(40px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -116,6 +124,8 @@ const config: Config = {
         marquee: "marquee var(--duration) infinite linear",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         spotlight: "spotlight 2s ease .75s 1 forwards",
+        "fade-in": "fade-in 0.8s ease 0.2s forwards",
+        "fade-up": "fade-up 0.8s ease 0.4s forwards",
       },
       backgroundImage: {
         "gold-gradient": "linear-gradient(135deg, #D4AF37 0%, #F0D060 50%, #C9A84C 100%)",

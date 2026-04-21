@@ -246,3 +246,37 @@
     backface-visibility: hidden;
   }
 }
+
+/* ── Hero Animations ── */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease forwards;
+  animation-delay: 0.1s;
+}
+
+.animate-fade-up {
+  animation: fade-up 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
