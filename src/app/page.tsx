@@ -3,7 +3,6 @@ import { Sparkles } from "@/components/ui/sparkles";
 import { BlurredStagger } from "@/components/ui/blurred-stagger-text";
 import { Testimonials } from "@/components/ui/unique-testimonial";
 import { Marquee } from "@/components/ui/marquee";
-import { Spotlight } from "@/components/ui/spotlight";
 import { Navbar } from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
 import {
@@ -104,15 +103,6 @@ export default function HomePage() {
 
       {/* ── HERO ── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-        {/* Spotlight */}
-        <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="rgba(212,175,55,0.15)" />
-
-        {/* Grid background */}
-        <div className="absolute inset-0 grid-bg opacity-40" />
-
-        {/* Radial gradient */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(212,175,55,0.04)_0%,transparent_70%)]" />
-
         {/* Content */}
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto pt-24">
           {/* Badge */}
